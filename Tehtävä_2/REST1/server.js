@@ -6,20 +6,32 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// CORS: salli kaikki (demoa varten)
+/*CORS isn’t enabled on the server, this is due to security reasons by default,
+so no one else but the webserver itself can make requests to the server.*/
+// Add headers
 app.use(function (req, res, next) {
+  // Website you wish to allow to connect
   res.setHeader("Access-Control-Allow-Origin", "*");
+
+  // Request methods you wish to allow
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, OPTIONS, PUT, PATCH, DELETE"
   );
+
+  // Request headers you wish to allow
   res.setHeader(
     "Access-Control-Allow-Headers",
     "Origin, Accept, Content-Type, X-Requested-With, X-CSRF-Token"
   );
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Content-Type", "application/json");
-  if (req.method === "OPTIONS") return res.sendStatus(204);
+
+  // Set to true if you need the website to include cookies in the requests sent
+  // to the API (e.g. in case you use sessions)
+  res.setHeader("Access-Control-Allow-Credentials", true);
+
+  res.setHeader("Content-type", "application/json");
+
+  // Pass to next layer of middleware
   next();
 });
 
