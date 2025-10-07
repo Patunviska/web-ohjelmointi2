@@ -1,0 +1,53 @@
+.container {
+  font-family: system-ui, sans-serif;
+  padding: 24px;
+}
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+button.active {
+  background: #333;
+  color: white;
+}
+.card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  max-width: 520px;
+}
+.grid {
+  display: grid;
+  gap: 8px;
+}
+input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.status {
+  margin-top: 8px;
+}
+.ok {
+  margin-top: 8px;
+}
+.list {
+  margin-top: 8px;
+}
+.hint {
+  margin-top: 24px;
+  opacity: 0.7;
+}
+hr {
+  margin: 16px 0;
+  border: none;
+  border-top: 1px solid #eee;
+}

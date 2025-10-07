@@ -1,0 +1,6 @@
+auto car
+talo house
+koira dog
+kissa cat
+hattu hat
+piirakka pie
